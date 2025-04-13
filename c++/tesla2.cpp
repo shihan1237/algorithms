@@ -4,12 +4,19 @@
 #include <unordered_map>
 #include <string>
 
-
 // N个结点，vector<int> &A给出了父亲依赖关系，string &S给出了每个结点的字符
 // 把相邻的，字符不同的结点串起来，找到最大的串，返回其长度
 
 
+
 // 正确性通过率15%，性能通过率20%
+// 用并查集分了不同的可通行区域以后，还应该剪枝，遍历每一个结点，如果它的边多于两个，则应该
+// 划分可通行区域以后，是不是遍历连通区域内每一个结点，用bfs求它到其它结点的路径，取最大值即可？就和“网络传播时间”那道题一样
+// 性能还是不好，还是用树+dfs的思路来做比较好，
+
+//第二题，对于每一个连通集，求“树的直径”，任选一个节点 u，做一次 BFS，找到最远的节点 v。
+// 以 v 为起点，再做一次 BFS，找到离 v 最远的节点 w，v到w的距离即为所求。
+
 // you can write to stdout for debugging purposes, e.g.
 // cout << "this is a debug message" << endl;
 using namespace std;
